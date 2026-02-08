@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propose Day</title>
+    <style>
+        body { background-color: #fff9f9; font-family: 'Arial', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 400px; border: 2px solid #ff4d6d; }
+        h2 { color: #ff4d6d; margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: #ff4d6d; color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background: #ff758f; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>❤️ Propose Day ❤️</h2>
+    <p>Tapai ko special person ko lagi proposal banayunus.</p>
+    
+    <input type="text" id="yourName" placeholder="Tapai ko Naam (e.g. Rahul)">
+    <input type="text" id="partnerName" placeholder="Partner ko Naam (e.g. Anjali)">
+    <textarea id="msg" placeholder="Khai bhanna chahanuhunchha? (Optional)"></textarea>
+    
+    <button onclick="makeLink()">Create Proposal Link 💘</button>
+    
+    <div id="linkOutput" style="margin-top:20px; word-break: break-all; color: blue;"></div>
+</div>
+
+<script>
+    function makeLink() {
+        let name = document.getElementById('yourName').value;
+        let partner = document.getElementById('partnerName').value;
+        // Yo demo ko lagi ho, real site ma display page chahincha
+        let generatedLink = window.location.href + "?from=" + encodeURIComponent(name) + "&to=" + encodeURIComponent(partner);
+        document.getElementById('linkOutput').innerText = "Link tayar bhayo: " + generatedLink;
+    }
+</script>
+
+</body>
+</html>
